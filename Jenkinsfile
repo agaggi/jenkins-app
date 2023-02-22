@@ -1,9 +1,20 @@
+
 pipeline {
-    agent { docker { image 'python:3.10.7-alpine' } }
+    agent any
+
+    options {
+        disableConcurrentBuilds()
+    }
+
+    environment {
+        DOCKER_TAG = sh 'git rev-parse --short HEAD'
+        
+    }
+
     stages {
-        stage('build') {
+        stage('Checkout') {
             steps {
-                sh 'python --version'
+                echo "${DOCKER_TAG}"
             }
         }
     }
