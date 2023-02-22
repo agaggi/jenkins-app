@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo "${DOCKER_TAG}"
+                echo "This is ${DOCKER_TAG}"
             }
         }
     }
