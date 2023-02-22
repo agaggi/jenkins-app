@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        DOCKER_TAG = echo 'git rev-parse --short HEAD'
+        DOCKER_TAG = "${git rev-parse --short HEAD}"
         
     }
 
