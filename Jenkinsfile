@@ -1,6 +1,3 @@
-def PIPELINE_ERROR = false
-
-
 pipeline {
     agent any
 
@@ -26,8 +23,6 @@ pipeline {
         }
 
         stage ('Compile') {
-            // when { expression { !PIPELINE_ERROR } }
-
             steps {
                 echo 'Yo'
             }
