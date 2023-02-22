@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        DOCKER_TAG = sh 'git rev-parse --short HEAD'
+        DOCKER_TAG = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
         
     }
 
