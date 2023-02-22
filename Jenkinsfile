@@ -9,7 +9,7 @@ pipeline {
     }
 
     environment {
-        # Use the head of the commit hash for 'unique' tags 
+        // Use the head of the commit hash for 'unique' tags 
         DOCKER_TAG = sh(script: 'git rev-parse --short HEAD', returnStdout: true)
         
         NEW_VERSION = '1.3.0'
@@ -26,7 +26,7 @@ pipeline {
         }
 
         stage ('Compile') {
-            # when { expression { !PIPELINE_ERROR } }
+            // when { expression { !PIPELINE_ERROR } }
 
             steps {
                 echo 'Yo'
